@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<Title>Discounted clocks page</Title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="header">
+<h1>Discounted clocks</h1>
+</div>
+
+<div class="row">
+<div class="col-1 col-m-1 menu">
+</div>
+
+<div class="col-3 col-m-4 menu">
+<ul>
+<p><button class="w3-button w3-ripple w3-block w3-brown w3-left-align"><a href="index.html">Home</a></button></p>
+<p><button class="w3-button w3-ripple w3-block w3-brown w3-left-align"><a href="gallery.html">Gallery</a></button></p>
+<p><button class="w3-button w3-ripple w3-block w3-brown w3-left-align"><a href="discountedclocks.html">Discounted clocks</a></button></p>
+<p><button class="w3-button w3-ripple w3-block w3-brown w3-left-align"><a href="topclocks.html">TOP clocks</a></button></p>
+<p><button class="w3-button w3-ripple w3-block w3-brown w3-left-align"><a href="jobs.html">Jobs</a></button></p>
+<p><button class="w3-button w3-ripple w3-block w3-brown w3-left-align"><a href="contact.html">Contact</a></button></p>
+</ul>
+</div>
+
+<div class="col-6 col-m-10">
+<h2 style="text-align:center">Discounted clocks</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 3</div>
+    <img src="images/clock7discount.jpg" style="width:66%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 3</div>
+    <img src="images/clock8discount.jpg" style="width:66%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 3</div>
+    <img src="images/clockRhysDiscount.jpg" style="width:66%">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/clock7discount.jpg" style="width:100%" onclick="currentSlide(1)" alt="Spongebob clock, <s> £20 </s> £15">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/clock8discount.jpg" style="width:100%" onclick="currentSlide(2)" alt="Minecraft creeper clock, <s> £40 </s> £20">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/clockRhysDiscount.jpg" style="width:100%" onclick="currentSlide(3)" alt="Rhys Limited Clock, <s> £1200</s> £400">
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-2 col-m-12">
+</div>
+
+</div>
+
+
+
+<div class="col-1 col-m-1 menu">
+</div>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+<img src="images/100th.jpg" alt="100th anniversary logo" class="responsive">
+<div class="footer">
+<p>The Clock Emporium <i class="fa fa-copyright"></i></p>
+</div>
+
+</body>
+</html>
